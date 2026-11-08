@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORION dataset-v1 r3 record schema",
+  "type": "object",
+  "required": [
+    "metadata",
+    "records"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "record_id",
+          "source_collection",
+          "source_index",
+          "program_id",
+          "ticker",
+          "company",
+          "drug_or_program",
+          "indication",
+          "application_type",
+          "event_type_raw",
+          "event_type_label",
+          "event_type_ko",
+          "date_or_period",
+          "date_precision",
+          "event_date",
+          "window_start",
+          "window_end",
+          "company_sentence",
+          "timing_legend_quote",
+          "timing_context_quote",
+          "source_url",
+          "source_publish_date",
+          "source_publish_at",
+          "source_filing_date",
+          "source_form",
+          "source_accession",
+          "quote_sha256",
+          "source_snapshot_sha256",
+          "source_fetched_at",
+          "orion_checked_at",
+          "orion_last_checked_date",
+          "source_check_method",
+          "review_status",
+          "review_status_raw",
+          "quote_verified",
+          "wording_history",
+          "wording_changes_count",
+          "disclosure",
+          "presentation_event_type",
+          "presentation_date",
+          "presentation_format",
+          "presentation_sentence",
+          "presentation_source_url",
+          "presentation_source_date",
+          "presentation_reported_source_sha256",
+          "presentation_reported_quote_sha256",
+          "presentation_verified_by",
+          "presentation_review_decision_date",
+          "presentation_review_decision_scope",
+          "presentation_start_time",
+          "presentation_end_time",
+          "presentation_time_zone_as_written",
+          "presentation_conference",
+          "company_url"
+        ],
+        "properties": {
+          "record_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "이 스냅샷 안의 행 식별자. 라이브 영구 주소 아님"
+          },
+          "source_collection": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "rows/ended/disclosed/undated 원래 소속. 독립적인 결과 판정 아님"
+          },
+          "source_index": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "원본 배열의 위치. 원본 순서 보존용"
+          },
+          "program_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 프로그램/기록 ID. 약물 고유 식별자로 보장하지 않음"
+          },
+          "ticker": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "공개 피드의 티커"
+          },
+          "company": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "회사 표기를 그대로 보존. 회사명 정규화 없음"
+          },
+          "drug_or_program": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "약/프로그램 원값. 실적 발표처럼 약이 아닌 값도 포함"
+          },
+          "indication": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 적응증 표현. 표준 질환명으로 치환하지 않음"
+          },
+          "application_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "신청 종류가 명시된 경우의 값"
+          },
+          "event_type_raw": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 이벤트 분류 코드"
+          },
+          "event_type_label": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 분류표의 영어 설명"
+          },
+          "event_type_ko": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 코드의 한국어 설명. 원문 재분류 아님"
+          },
+          "date_or_period": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "회사 날짜/기간 표현 원값. 추정 날짜를 넣지 않음"
+          },
+          "date_precision": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 정밀도 코드 그대로. day/month/quarter/half/year/ambiguous/none"
+          },
+          "event_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "정밀도가 day인 행의 단일일. 다른 경계를 단일일로 바꾸지 않음"
+          },
+          "window_start": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료가 명시한 기간 시작 경계. 문장 자체와 구분"
+          },
+          "window_end": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "피드의 기간 끝 경계. 월/분기/연말 경계는 단일 사건일 아님"
+          },
+          "company_sentence": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "회사 원문 문장/발췌. 문맥 없이 독립 문장임을 보장하지 않음"
+          },
+          "timing_legend_quote": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "문구 해석에 필요한 추가 범례 원문"
+          },
+          "timing_context_quote": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "문구 해석에 필요한 추가 문맥 원문"
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "주 회사 문장에 연결된 원문 URL"
+          },
+          "source_publish_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "회사가 별도로 밝힌 발표일만. SEC 제출일로 채우지 않음."
+          },
+          "source_publish_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "회사가 별도로 밝힌 발표 시각의 명시 값. source_publish_date보다 세밀한 시간 정밀도."
+          },
+          "source_filing_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 filedDate의 SEC 제출일. 회사의 별도 발표일과 구분."
+          },
+          "source_form": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "주 출처의 서식 표기"
+          },
+          "source_accession": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "주 SEC 출처의 accession 원값"
+          },
+          "quote_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "company_sentence의 양끝 고정 29개 공백 제거 후 UTF-8 바이트를 직접 SHA-256. 문장 원값은 바꾸지 않음."
+          },
+          "source_snapshot_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "비공개 감시 원장에서 동일 URL·현재 문구 최초 양성 대조에 연결한 수신본 raw_sha256. 수신 시각과 한 쌍. 원문 바이트 자체 재검증 아님."
+          },
+          "source_fetched_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "source_snapshot_sha256와 같은 원장 snapshot의 fetched_at_utc. 회사 발표/SEC 제출/최초 관측/공인 시각이 아님."
+          },
+          "orion_checked_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료에 명시된 주 출처 대조 시각. 최초 관측/수집 시각 아님"
+          },
+          "orion_last_checked_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "주 자료의 날짜 단위 확인 표기. 시각 아님"
+          },
+          "source_check_method": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "대조 방법 원값. 사람 검토 여부는 별도 review 상태"
+          },
+          "review_status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "automated/human/unknown. 원피드의 검토 표시이며 이번 재검토 결과 아님"
+          },
+          "review_status_raw": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "원자료 검토 상태 코드 그대로"
+          },
+          "quote_verified": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "원자료의 문장 대조 불리언. true만으로 사람 검토 아님"
+          },
+          "wording_history": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "제공된 과거 문구 이력. 날짜/문서/URL도 원값. []는 제공된 이력 없음",
+            "items": {
+              "type": "object"
+            }
+          },
+          "wording_changes_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "원자료의 문구 이력 수. FDA 날짜 변경 횟수가 아님"
+          },
+          "disclosure": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "연결된 후속 공개 자료 원값. 실제 사건의 결과 판정으로 변환하지 않음"
+          },
+          "presentation_event_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 구조화 발표 일정이 있을 때 conference-presentation"
+          },
+          "presentation_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 회사 PR의 발표일. 주 period/SEC 학회기간과 구분"
+          },
+          "presentation_format": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "발표 형식 원값"
+          },
+          "presentation_sentence": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "해당 발표일/시각이 명시된 별도 원문 문구"
+          },
+          "presentation_source_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 일정의 회사 PR 원문 URL"
+          },
+          "presentation_source_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 출처의 명시된 날짜. 주 filedDate와 구분"
+          },
+          "presentation_reported_source_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 일정 자료의 제공된 해시. 주 company_sentence/주 source_url의 직접 계산값이나 수신본 해시가 아님."
+          },
+          "presentation_reported_quote_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 일정 자료의 제공된 해시. 주 company_sentence/주 source_url의 직접 계산값이나 수신본 해시가 아님."
+          },
+          "presentation_verified_by": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 일정 검증 주체 원값. codex는 AI이며 사람 아님"
+          },
+          "presentation_review_decision_date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 표시 처리 결정 날짜. 행 전체 사람 검토 날짜 아님"
+          },
+          "presentation_review_decision_scope": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "표시 처리 결정 범위. calendar_treatment_only를 사람 원문 검토로 승격 안 함"
+          },
+          "presentation_start_time": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 시작 시각 표기"
+          },
+          "presentation_end_time": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 종료 시각 표기"
+          },
+          "presentation_time_zone_as_written": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "별도 발표 원문의 시간대 표기. 임의 UTC 변환 안 함"
+          },
+          "presentation_conference": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "별도 발표의 학회 이름/기간 원값. 발표 단일일과 구분"
+          },
+          "company_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "해당 회사의 ORION 페이지. 새 문장 영구 주소를 만든 것이 아님"
+          }
+        }
+      }
+    }
+  }
+}

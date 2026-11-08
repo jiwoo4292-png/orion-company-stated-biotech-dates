@@ -1,0 +1,9 @@
+# Preserve the bytes listed in SHA256SUMS.txt.
+/CHANGELOG.md -text
+/FIELDS.md -text
+/LICENSE.md -text
+/README.md -text
+/dataset.csv -text
+/dataset.json -text
+/schema.json -text
+/SHA256SUMS.txt -text
