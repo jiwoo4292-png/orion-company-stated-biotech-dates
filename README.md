@@ -1,5 +1,7 @@
 # ORION Company-Stated Biotech Dates
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24149886.svg)](https://doi.org/10.5281/zenodo.24149886)
+
 ORION records the dates and periods U.S. biotech companies state in SEC filings and press releases, alongside the quoted wording, source links and available wording history. This is a research and source-checking reference. Company-stated dates can change and do not establish that an event occurred.
 
 ## Snapshot
@@ -18,11 +20,11 @@ Original review flags show 344 automated checks and 1 human review. Review flags
 | [schema.json](schema.json) | JSON Schema for the JSON file. |
 | [LICENSE.md](LICENSE.md) | ORION license, attribution and separate rights for company excerpts. |
 | [CHANGELOG.md](CHANGELOG.md) | Dataset revision and correction conventions. |
-| [SHA256SUMS.txt](SHA256SUMS.txt) | SHA-256 of every other file in this payload. |
+| [SHA256SUMS.txt](SHA256SUMS.txt) | SHA-256 checksums for the fixed v1.0 release payload. |
 
 CSV and JSON carry the same records. A CSV blank maps to JSON `null`. CSV values for `wording_history`, `disclosure` and `presentation_conference` contain serialized JSON. Keep `false`, `0` and `[]` as values. Preserve the `source_accession` and other identifiers as text.
 
-From the payload directory, use `sha256sum -c SHA256SUMS.txt` or compare hashes computed with `Get-FileHash -Algorithm SHA256`. The checksum list verifies the released file bytes. It is separate from quote hashes, original-source digests and timestamps.
+From the [v1.0 release archive](https://github.com/jiwoo4292-png/orion-company-stated-biotech-dates/releases/tag/v1.0), use `sha256sum -c SHA256SUMS.txt` or compare hashes computed with `Get-FileHash -Algorithm SHA256`. This repository README includes later citation metadata; [ORIGINAL_README.md](ORIGINAL_README.md) preserves the release README. When checking this branch, compare `ORIGINAL_README.md` against the manifest's `README.md` entry. The checksum list identifies the released file bytes. It is separate from quote hashes, original-source digests and timestamps.
 
 ## Evidence and blanks
 
@@ -37,7 +39,9 @@ The `source_snapshot` columns (`source_snapshot_sha256` and `source_fetched_at`)
 
 `source_snapshot` 관련 두 칸은 매일 감시에서 원문 URL과 현재 인용문이 일치한 수신 기록으로 채웁니다. 일치하는 기록이 없는 칸은 비워 둡니다. **v1.1은 2026년 11월 17일(KST) 공개 예정입니다.**
 
-## Citation
+## How to cite
+
+Cite this version: [10.5281/zenodo.24149887](https://doi.org/10.5281/zenodo.24149887)
 
 > ORION. *ORION Company-Stated Biotech Dates*, v1.0 (`dataset-v1-local-20261106-r3`). Calendar snapshot retrieved 2026-11-06T06:57:16.079853Z. Original feed https://www.orionbiotechai.com/calendar.json. ORION-authored material under CC BY-NC 4.0. Issuer excerpts remain subject to their original rights.
 

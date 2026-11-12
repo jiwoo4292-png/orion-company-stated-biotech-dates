@@ -1,5 +1,7 @@
 # ORION Company-Stated Biotech Dates
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24149886.svg)](https://doi.org/10.5281/zenodo.24149886)
+
 Company-stated U.S. biotech FDA target dates and clinical timing, with quoted source wording (a sentence or excerpt), source links, SHA-256 hashes of the stored quote, and recorded wording histories.
 
 For researchers, data journalists, newsletter writers and students.
@@ -24,9 +26,13 @@ print(data.shape)
 
 ORION monitors sources daily and publishes separate versioned exports. Version 1.0 is a fixed snapshot dated 2026-11-06.
 
-## License and citation
+## License
 
 ORION material is licensed under CC BY-NC 4.0 to the extent of ORION's rights. Company excerpts and other third-party material remain subject to their owners' rights. See [LICENSE.md](LICENSE.md).
+
+## How to cite
+
+Cite this version: [10.5281/zenodo.24149887](https://doi.org/10.5281/zenodo.24149887)
 
 Cite the company, source URL and filing/publication date, ORION record URL and check date, and dataset version. Company-stated dates can change and do not establish that an event occurred.
 
