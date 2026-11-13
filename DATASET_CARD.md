@@ -36,4 +36,4 @@ Cite this version: [10.5281/zenodo.24149887](https://doi.org/10.5281/zenodo.2414
 
 Cite the company, source URL and filing/publication date, ORION record URL and check date, and dataset version. Company-stated dates can change and do not establish that an event occurred.
 
-Commercial use or custom data: orion.biotech.ai@gmail.com
+Commercial use or custom data: hello@orionbiotechai.com
