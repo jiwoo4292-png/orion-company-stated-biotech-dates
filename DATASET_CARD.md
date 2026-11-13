@@ -30,4 +30,4 @@ ORION material is licensed under CC BY-NC 4.0 to the extent of ORION's rights. C
 
 Cite the company, source URL and filing/publication date, ORION record URL and check date, and dataset version. Company-stated dates can change and do not establish that an event occurred.
 
-Commercial use or custom data: orion.biotech.ai@gmail.com
+Commercial use or custom data: hello@orionbiotechai.com
